@@ -1,0 +1,36 @@
+{
+  "name": "teach-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moonryc/Teach-Bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moonryc/Teach-Bot/issues"
+  },
+  "homepage": "https://github.com/moonryc/Teach-Bot#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "prettier": "^2.5.1",
+    "sequelize": "^6.15.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "jest": "^27.5.1"
+  }
+}
