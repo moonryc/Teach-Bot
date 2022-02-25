@@ -1,9 +1,4 @@
-const withAuth = (req,res,next) => {
-  if(!req.session.user_id){
-    res.redirect('/login')
-  }else{
-    next()
-  }
-}
+const a21Handler = require('./a21Handler');
+const withAuth = require('./withAuth');
 
-module.exports = withAuth
+module.exports = { withAuth, a21Handler };
