@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --experimental-fetch --trace-warnings server.js",
-    "devStart": "nodemon --experimental-fetch --trace-warnings server.js",
-    "seed": "node --experimental-fetch --trace-warnings seeds/index.js",
+    "start": "node server.js",
+    "devStart": "nodemon server.js",
+    "seed": "node seeds/index.js",
     "test": "jest"
   },
   "repository": {

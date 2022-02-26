@@ -6,7 +6,7 @@ class Question extends Model {}
 Question.init(
   {
     id: {
-      type: DataTypes.TEXT,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
