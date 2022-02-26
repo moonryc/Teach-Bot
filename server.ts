@@ -1,3 +1,4 @@
+require('dotenv').config();
 const sequelize = require('./config/connection');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
@@ -9,13 +10,14 @@ const expressHandleBars = require('express-handlebars');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const logger = require('morgan');
+console.log(typeof process.env.COOKIE_AGE_MINUTES);
 
 //extra setups
 const handlebars = expressHandleBars.create({ helpers });
 const sessionSetup = {
   secret: process.env.SESSION_SECRET,
   cookie: {
-    maxAge: process.env.COOKIE_AGE_MINUTES * 60 * 1000,
+    maxAge: 5 * 60 * 1000,
   },
   resave: false,
   saveUninitialized: true,

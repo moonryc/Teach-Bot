@@ -5,10 +5,10 @@ const a21Handler = async (req, res, next) => {
 
   let prompt =
     'TeachBot is your tutor. He has knowledge of javascript, html, css and can answer your questions in a clear and concise manner.' +
-    '\nThe following is a conversation between you and SalBot. The conversation will follow the following format' +
-    '\nSalBot: "Hello welcome to my tutoring session."' +
+    '\nThe following is a conversation between you and TeachBot. The conversation will follow the following format' +
+    '\nTeachBot: "Hello welcome to my tutoring session."' +
     '\nYou: "Thank you."' +
-    '\nSalBot: "We can start if you are ready"' +
+    '\nTeachBot: "We can start if you are ready"' +
     '\nYou: "Yes I am ready"';
 
   //TODO GET MESSAGE HISTORY
