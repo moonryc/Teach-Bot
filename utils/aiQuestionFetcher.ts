@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 const aiQuestionFetcher = async (question) => {
   try {
@@ -25,4 +25,4 @@ const aiQuestionFetcher = async (question) => {
   }
 };
 
-module.exports = aiQuestionFetcher;
+export default aiQuestionFetcher;

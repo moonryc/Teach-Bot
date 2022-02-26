@@ -1,4 +1,4 @@
-const { User } = require('../models');
+import { User } from '../models';
 
 const userData = [
   {
@@ -30,4 +30,4 @@ const userData = [
 
 const seedUser = () => User.bulkCreate(userData);
 
-module.exports = seedUser;
+export default seedUser;

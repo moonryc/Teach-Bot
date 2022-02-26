@@ -1,4 +1,4 @@
-const aiQuestionFetcher = require('../utils/aiQuestionFetcher');
+import aiQuestionFetcher from '../utils/aiQuestionFetcher';
 
 const a21Handler = async (req, res, next) => {
   const { question } = req.body;
@@ -17,4 +17,4 @@ const a21Handler = async (req, res, next) => {
   req.body.answer = await aiQuestionFetcher(fullQuestion);
   next();
 };
-module.exports = a21Handler;
+export default a21Handler;

@@ -1,4 +1,4 @@
-const { Message } = require('../models');
+import { Message } from '../models';
 
 const messageData = [
   {
@@ -175,4 +175,4 @@ const messageData = [
 
 const seedMessage = () => Message.bulkCreate(messageData);
 
-module.exports = seedMessage;
+export default seedMessage;

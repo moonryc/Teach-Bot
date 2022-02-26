@@ -1,23 +1,26 @@
-require('dotenv').config();
-const sequelize = require('./config/connection');
-const routes = require('./controllers');
-const helpers = require('./utils/helpers');
+import dotenv from 'dotenv';
+
+dotenv.config();
+import sequelize from './config/connection';
+import routes from './controllers';
+import helpers from './utils/helpers';
 
 //3rd party imports
-const express = require('express');
-const path = require('path');
-const expressHandleBars = require('express-handlebars');
-const session = require('express-session');
+import express from 'express';
+import path from 'path';
+import expressHandleBars from 'express-handlebars';
+import session from 'express-session';
+
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const logger = require('morgan');
-console.log(typeof process.env.COOKIE_AGE_MINUTES);
+import logger from 'morgan';
 
 //extra setups
 const handlebars = expressHandleBars.create({ helpers });
+
 const sessionSetup = {
-  secret: process.env.SESSION_SECRET,
+  secret: <string>process.env.SESSION_SECRET,
   cookie: {
-    maxAge: 5 * 60 * 1000,
+    maxAge: parseInt(process.env.COOKIE_AGE_MINUTES || '5') * 60 * 1000,
   },
   resave: false,
   saveUninitialized: true,

@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
+import { Model, DataTypes } from 'sequelize';
+import sequelize from '../config/connection';
+import bcrypt from 'bcrypt';
 
 class User extends Model {
   async isPasswordValid(submittedPassword) {
@@ -65,4 +65,4 @@ User.init(
   }
 );
 
-module.exports = User;
+export default User;

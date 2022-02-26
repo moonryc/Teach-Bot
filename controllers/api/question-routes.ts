@@ -1,11 +1,13 @@
-const router = require('express').Router();
-const { a21Handler, withAuth } = require('../../middleware/');
-const { Message } = require('../../models');
+import { a21Handler, withAuth } from '../../middleware/';
+import { Message } from '../../models';
+import express from 'express';
+
+const questionRoutes = express.Router();
 
 /**
  * This is for asking questions
  */
-router.post('/:question_id', withAuth, a21Handler, async (req, res) => {
+questionRoutes.post('/:question_id', withAuth, a21Handler, async (req, res) => {
   try {
     const document = await Message.create({
       user_id: req.session.user_id,
@@ -24,4 +26,4 @@ router.post('/:question_id', withAuth, a21Handler, async (req, res) => {
   }
 });
 
-module.exports = router;
+export default questionRoutes;

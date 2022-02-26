@@ -1,9 +1,10 @@
-const { User } = require('../models');
-const router = require('express').Router();
-const { withAuth } = require('../middleware');
+import express from 'express';
+import { User } from '../models';
+
+const homeRoutes = express.Router();
 
 //HOMEPAGE
-router.get('/', async (req, res) => {
+homeRoutes.get('/', async (req, res) => {
   console.log(req.session);
   try {
     const posts = await Post.findAll({
@@ -25,13 +26,13 @@ router.get('/', async (req, res) => {
 });
 
 //LOGIN PAGE
-router.get('/login', (req, res) => {
+homeRoutes.get('/login', (req, res) => {
   res.render('login');
 });
 
 //SIGNUP PAGE
-router.get('/signup', (req, res) => {
+homeRoutes.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-module.exports = router;
+export default homeRoutes;

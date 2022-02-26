@@ -1,7 +1,8 @@
-require('dotenv').config();
-const Sequelize = require('sequelize');
+import dotenv from 'dotenv';
+import { Sequelize } from 'sequelize';
+dotenv.config();
 
-let sequelize;
+let sequelize: any;
 
 //create connection to the db
 if (process.env.JAWSDB_URL) {
@@ -13,9 +14,9 @@ if (process.env.JAWSDB_URL) {
   console.log('using local');
   console.log(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW);
   sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PW,
+    <string>process.env.DB_NAME,
+    <string>process.env.DB_USER,
+    <string>process.env.DB_PW,
     {
       host: 'localhost',
       dialect: 'mysql',
@@ -25,4 +26,4 @@ if (process.env.JAWSDB_URL) {
   );
 }
 
-module.exports = sequelize;
+export default sequelize;

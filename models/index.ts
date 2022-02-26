@@ -1,6 +1,6 @@
-const User = require('./User');
-const Message = require('./Message');
-const Question = require('./Question');
+import User from './User';
+import Message from './Message';
+import Question from './Question';
 
 //create associations below
 
@@ -28,4 +28,4 @@ Message.belongsTo(Question, {
   foreignKey: 'question_id',
 });
 
-module.exports = { User, Message, Question };
+export { User, Message, Question };
