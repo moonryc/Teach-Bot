@@ -1,5 +1,7 @@
 require('dotenv').config({ path: '../.env' });
 const seedUser = require('./user-seeds');
+const seedMessage = require('./message-seeds');
+const seedQuestion = require('./question-seeds');
 
 const sequelize = require('../config/connection');
 
@@ -16,11 +18,11 @@ const seedAll = async () => {
     await seedUser();
     statusUpdate('USERS SEEDED');
 
-    // await seedPost();
-    // statusUpdate('POSTS SEEDED');
+    await seedQuestion();
+    statusUpdate('QUESTIONS SEEDED');
 
-    // await seedComments();
-    // statusUpdate('COMMENTS SEEDED');
+    await seedMessage();
+    statusUpdate('MESSAGES SEEDED');
   } catch (e) {
     statusUpdate(e);
   }
@@ -30,15 +32,6 @@ const seedAll = async () => {
 
 try {
   (async () => {
-    const response = await fetch(
-      'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits'
-    );
-    const data = await response.json();
-    console.log('=======================');
-    console.log('data');
-    console.log(data);
-    console.log('=======================');
-
     await seedAll();
   })();
 } catch (e) {

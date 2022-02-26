@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "devStart": "nodemon server.js",
-    "seed": "node --experimental-fetch --trace-warnings seeds/index.js",
-    "test": "test"
+    "seed": "node seeds/index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/moonryc/Teach-Bot#readme",
   "dependencies": {
+    "axios": "^0.26.0",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^16.0.0",
