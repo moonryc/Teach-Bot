@@ -30,15 +30,6 @@ const seedAll = async () => {
 
 try {
   (async () => {
-    const response = await fetch(
-      'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits'
-    );
-    const data = await response.json();
-    console.log('=======================');
-    console.log('data');
-    console.log(data);
-    console.log('=======================');
-
     await seedAll();
   })();
 } catch (e) {
