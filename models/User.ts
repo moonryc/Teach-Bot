@@ -3,7 +3,7 @@ import sequelize from '../config/connection';
 import bcrypt from 'bcrypt';
 
 class User extends Model {
-  async isPasswordValid(submittedPassword) {
+  async isPasswordValid(submittedPassword: string) {
     return await bcrypt.hash(submittedPassword, this.password);
   }
 }
@@ -22,7 +22,7 @@ User.init(
       unique: true,
       validate: {
         //username length is greater than 4
-        len: [4],
+        len: [4, 10],
       },
     },
     email: {
@@ -38,7 +38,7 @@ User.init(
       allowNull: false,
       validate: {
         //password length is greater than 4
-        len: [4],
+        len: [4, 10],
       },
     },
   },
