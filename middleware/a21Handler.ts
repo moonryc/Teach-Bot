@@ -1,6 +1,12 @@
 import aiQuestionFetcher from '../utils/aiQuestionFetcher';
+import { IReqSession } from '../types';
+import { NextFunction } from 'express';
 
-const a21Handler = async (req, res, next) => {
+const a21Handler = async (
+  req: IReqSession,
+  res: Response,
+  next: NextFunction
+) => {
   const { question } = req.body;
 
   let prompt =

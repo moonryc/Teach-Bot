@@ -1,7 +1,13 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection';
 
-class Message extends Model {}
+class Message extends Model {
+  declare id: number;
+  declare user_id: number;
+  declare question_id: number;
+  declare question_text: string;
+  declare answer_text: string;
+}
 
 Message.init(
   {

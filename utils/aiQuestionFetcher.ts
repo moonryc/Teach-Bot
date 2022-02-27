@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const aiQuestionFetcher = async (question) => {
+const aiQuestionFetcher = async (question: string) => {
   try {
     const response = await axios({
       method: 'post',
