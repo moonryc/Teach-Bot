@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node server.ts",
     "devStart": "nodemon server.ts",
-    "seed": "node seeds/index.ts",
+    "seed": "ts-node seeds/index.ts",
     "test": "jest"
   },
   "repository": {
@@ -38,7 +38,6 @@
     "mysql2": "^2.3.3",
     "prettier": "^2.5.1",
     "sequelize": "^6.15.1",
-    "ts-node": "^10.5.0",
     "typescript": "^4.5.5"
   },
   "devDependencies": {
@@ -46,7 +45,9 @@
     "@typescript-eslint/parser": "^5.12.1",
     "eslint": "^8.9.0",
     "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
+    "ts-node": "^10.5.0",
     "tslib": "^2.3.1"
   }
 }
