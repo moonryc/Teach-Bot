@@ -18,7 +18,6 @@ const aiQuestionFetcher = async (question: string) => {
         Authorization: `Bearer ${process.env.AI21_API_KEY}`,
       },
     });
-
     return response.data.completions[0].data.text;
   } catch (e) {
     console.log(e);

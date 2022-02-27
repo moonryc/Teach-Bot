@@ -16,9 +16,9 @@ questionRoutes.post(
     try {
       const document = await Message.create({
         user_id: req.session.user_id,
-        question_id: req.params.id,
-        question: req.body.question,
-        answer: req.body.answer,
+        question_id: parseInt(req.params.question_id),
+        question_text: req.body.question,
+        answer_text: req.body.answer,
       });
 
       if (!document) {
@@ -27,6 +27,8 @@ questionRoutes.post(
 
       return res.json({ message: req.body.answer });
     } catch (e) {
+      console.log('Error');
+      console.log(e);
       return res.status(500).json({ message: e });
     }
   }
