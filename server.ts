@@ -8,14 +8,14 @@ import helpers from './utils/helpers';
 //3rd party imports
 import express from 'express';
 import path from 'path';
-import expressHandleBars from 'express-handlebars';
+import { create } from 'express-handlebars';
 import session from 'express-session';
 //TODO convert to ESM
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 import logger from 'morgan';
 
 //extra setups
-const handlebars = expressHandleBars.create({ helpers });
+const handlebars = create({ helpers });
 
 const sessionSetup = {
   secret: <string>process.env.SESSION_SECRET,

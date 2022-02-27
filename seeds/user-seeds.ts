@@ -5,7 +5,7 @@ const userData = [
   {
     username: 'john',
     email: 'john@beatles.com',
-    password: bcrypt.hashSync('legend', 10),
+    password: bcrypt.hashSync('lennon', 10),
   },
   {
     username: 'paul',
