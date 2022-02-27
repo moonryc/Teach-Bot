@@ -1,11 +1,9 @@
 import dotenv from 'dotenv';
-
 dotenv.config({ path: '../.env' });
+import sequelize from '../config/connection';
 import seedUser from './user-seeds';
 import seedMessage from './message-seeds';
 import seedQuestion from './question-seeds';
-
-const sequelize = require('../config/connection');
 
 const statusUpdate = (message: string | any) => {
   console.log('======================');
