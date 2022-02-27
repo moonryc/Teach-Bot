@@ -1,3 +1,5 @@
-export interface IPlaceholder {
-  dayOfTheWeek: 'monday' | 'tuesday' | 'wednesday';
+import { Request } from 'express';
+
+export interface IReqSession extends Request {
+  session: any;
 }
