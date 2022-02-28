@@ -1,5 +1,5 @@
 import { asyncMiddleWare, a21Handler, withAuth } from '../../middleware/';
-import { Message } from '../../models';
+import { Message, Question } from '../../models';
 import express from 'express';
 import { IReqSession } from '../../types';
 
@@ -26,6 +26,53 @@ questionRoutes.post(
       }
 
       return res.json({ message: req.body.answer });
+    } catch (e) {
+      console.log('Error');
+      console.log(e);
+      return res.status(500).json({ message: e });
+    }
+  }
+);
+
+/**
+ * Creates a new Question Topic
+ */
+questionRoutes.post('/', withAuth, async (req: IReqSession, res) => {
+  try {
+    const document = await Question.create({
+      user_id: req.session.user_id,
+      topic: req.body.topic,
+    });
+
+    if (!document) {
+      return res.status(500).json({ message: 'error creating question' });
+    }
+
+    return res.json({ message: req.body.topic });
+  } catch (e) {
+    console.log('Error');
+    console.log(e);
+    return res.status(500).json({ message: e });
+  }
+});
+
+questionRoutes.delete(
+  '/:question_id',
+  withAuth,
+  async (req: IReqSession, res) => {
+    try {
+      const document = await Question.destroy({
+        where: {
+          id: req.params.question_id,
+          user_id: req.session.user_id,
+        },
+      });
+
+      if (!document) {
+        return res.status(500).json({ message: 'question not found' });
+      }
+
+      return res.sendStatus(200);
     } catch (e) {
       console.log('Error');
       console.log(e);
