@@ -1,12 +1,14 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '../config/connection';
 import bcrypt from 'bcrypt';
+import { Question } from './index';
 
 class User extends Model {
   declare id: number;
   declare password: string;
   declare username: string;
   declare email: string;
+
   async isPasswordValid(submittedPassword: string) {
     return await bcrypt.hash(submittedPassword, this.password);
   }
@@ -60,6 +62,33 @@ User.init(
           10
         );
         return updatedUserData;
+      },
+      afterCreate: async (userData) => {
+        try {
+          const response = await Question.bulkCreate([
+            {
+              user_id: userData.id,
+              topic: 'Javascript',
+            },
+            {
+              user_id: userData.id,
+              topic: 'html',
+            },
+            {
+              user_id: userData.id,
+              topic: 'css',
+            },
+            {
+              user_id: userData.id,
+              topic: 'node',
+            },
+          ]);
+          if (!response) {
+            throw 'error in creation';
+          }
+        } catch (e) {
+          console.log(e);
+        }
       },
     },
 

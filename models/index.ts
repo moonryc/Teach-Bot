@@ -14,6 +14,7 @@ User.hasMany(Question, {
 
 Question.hasMany(Message, {
   foreignKey: 'question_id',
+  onDelete: 'cascade',
 });
 
 Message.belongsTo(User, {
