@@ -1,6 +1,6 @@
-const axios = require('axios');
+import axios from 'axios';
 
-const aiQuestionFetcher = async (question) => {
+const aiQuestionFetcher = async (question: string) => {
   try {
     const response = await axios({
       method: 'post',
@@ -18,11 +18,10 @@ const aiQuestionFetcher = async (question) => {
         Authorization: `Bearer ${process.env.AI21_API_KEY}`,
       },
     });
-
     return response.data.completions[0].data.text;
   } catch (e) {
     console.log(e);
   }
 };
 
-module.exports = aiQuestionFetcher;
+export default aiQuestionFetcher;

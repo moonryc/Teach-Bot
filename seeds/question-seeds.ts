@@ -1,4 +1,4 @@
-const { Question } = require('../models');
+import { Question } from '../models';
 
 const questionData = [
   {
@@ -85,4 +85,4 @@ const questionData = [
 
 const seedQuestion = () => Question.bulkCreate(questionData);
 
-module.exports = seedQuestion;
+export default seedQuestion;

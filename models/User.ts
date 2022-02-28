@@ -1,9 +1,13 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
+import { DataTypes, Model } from 'sequelize';
+import sequelize from '../config/connection';
+import bcrypt from 'bcrypt';
 
 class User extends Model {
-  async isPasswordValid(submittedPassword) {
+  declare id: number;
+  declare password: string;
+  declare username: string;
+  declare email: string;
+  async isPasswordValid(submittedPassword: string) {
     return await bcrypt.hash(submittedPassword, this.password);
   }
 }
@@ -22,7 +26,7 @@ User.init(
       unique: true,
       validate: {
         //username length is greater than 4
-        len: [4],
+        len: [4, 10],
       },
     },
     email: {
@@ -38,17 +42,19 @@ User.init(
       allowNull: false,
       validate: {
         //password length is greater than 4
-        len: [4],
+        len: [4, 10],
       },
     },
   },
   {
     hooks: {
-      async beforeCreate(newUserData) {
+      // @ts-ignore
+      beforeCreate: async (newUserData: User) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
-      async beforeUpdate(updatedUserData) {
+      // @ts-ignore
+      beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(
           updatedUserData.password,
           10
@@ -65,4 +71,4 @@ User.init(
   }
 );
 
-module.exports = User;
+export default User;

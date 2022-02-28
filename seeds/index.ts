@@ -1,11 +1,11 @@
-require('dotenv').config({ path: '../.env' });
-const seedUser = require('./user-seeds');
-const seedMessage = require('./message-seeds');
-const seedQuestion = require('./question-seeds');
+import dotenv from 'dotenv';
+dotenv.config({ path: '../.env' });
+import sequelize from '../config/connection';
+import seedUser from './user-seeds';
+import seedMessage from './message-seeds';
+import seedQuestion from './question-seeds';
 
-const sequelize = require('../config/connection');
-
-const statusUpdate = (message) => {
+const statusUpdate = (message: string | any) => {
   console.log('======================');
   console.log(message);
   console.log('======================');
