@@ -3,8 +3,16 @@ const homeRoutes = express.Router();
 
 //HOMEPAGE
 homeRoutes.get('/', async (req, res) => {
-  console.log(req.session);
-  console.log(res);
+  res.render('homepage', {
+    id: 1,
+    topic_url: 'https://handlebarsjs.com/guide/',
+    title: 'Handlebars Docs',
+    created_at: new Date(),
+    comments: [{}, {}],
+    user: {
+      username: 'test_user'
+    }
+  });
 });
 
 //LOGIN PAGE
