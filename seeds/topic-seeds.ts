@@ -1,6 +1,6 @@
-import { Question } from '../models';
+import { Topic } from '../models';
 
-const questionData = [
+const topicData = [
   {
     user_id: 1,
     topic: 'Javascript',
@@ -83,6 +83,6 @@ const questionData = [
   },
 ];
 
-const seedQuestion = () => Question.bulkCreate(questionData);
+const seedTopic = () => Topic.bulkCreate(topicData);
 
-export default seedQuestion;
+export default seedTopic;

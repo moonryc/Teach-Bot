@@ -4,7 +4,7 @@ import sequelize from '../config/connection';
 class Message extends Model {
   declare id: number;
   declare user_id: number;
-  declare question_id: number;
+  declare topic_id: number;
   declare question_text: string;
   declare answer_text: string;
 }
@@ -25,11 +25,11 @@ Message.init(
         key: 'id',
       },
     },
-    question_id: {
+    topic_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'question',
+        model: 'topic',
         key: 'id',
       },
     },

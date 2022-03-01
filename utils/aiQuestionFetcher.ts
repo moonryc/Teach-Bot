@@ -10,7 +10,7 @@ const aiQuestionFetcher = async (question: string) => {
         numResults: 1,
         maxTokens: 100, //Max number of characters the AI can respond with
         stopSequences: ['"'], //What is the stopping symbol that the AI will end with
-        topKReturn: 0, //DO NOT TOUCH
+        topKReturn: 0.2, //DO NOT TOUCH
         temperature: 0.7, //DO NO TOUCH
       }),
       headers: {

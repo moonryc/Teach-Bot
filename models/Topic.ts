@@ -1,13 +1,13 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection';
 
-class Question extends Model {
+class Topic extends Model {
   declare id: number;
   declare user_id: number;
   declare topic: string;
 }
 
-Question.init(
+Topic.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -33,8 +33,8 @@ Question.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'question',
+    modelName: 'topic',
   }
 );
 
-export default Question;
+export default Topic;
