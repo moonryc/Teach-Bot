@@ -10,7 +10,7 @@ class User extends Model {
   declare email: string;
 
   async isPasswordValid(submittedPassword: string) {
-    return await bcrypt.hash(submittedPassword, this.password);
+    return await bcrypt.compare(submittedPassword, this.password);
   }
 }
 
