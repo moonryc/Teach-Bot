@@ -1,9 +1,10 @@
 import dotenv from 'dotenv';
-dotenv.config({ path: '../.env' });
+dotenv.config();
+// dotenv.config({ path: '../.env' });
 import sequelize from '../config/connection';
 import seedUser from './user-seeds';
 import seedMessage from './message-seeds';
-import seedQuestion from './question-seeds';
+import seedTopic from './topic-seeds';
 
 const statusUpdate = (message: string | any) => {
   console.log('======================');
@@ -17,17 +18,24 @@ const seedAll = async () => {
   try {
     await seedUser();
     statusUpdate('USERS SEEDED');
-
-    await seedQuestion();
-    statusUpdate('QUESTIONS SEEDED');
-
-    await seedMessage();
-    statusUpdate('MESSAGES SEEDED');
   } catch (e) {
     statusUpdate(e);
   }
-  statusUpdate('EVERYTHING HAS BEEN SEEDED SUCCESSFULLY');
-  process.exit(0);
+  try {
+    await seedTopic();
+    statusUpdate('TOPIC SEEDED');
+  } catch (e) {
+    statusUpdate(e);
+  }
+
+  try {
+    await seedMessage();
+    statusUpdate('MESSAGES SEEDED');
+    statusUpdate('EVERYTHING HAS BEEN SEEDED SUCCESSFULLY');
+    process.exit(0);
+  } catch (e) {
+    statusUpdate(e);
+  }
 };
 
 try {

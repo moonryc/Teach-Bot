@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '../config/connection';
 import bcrypt from 'bcrypt';
-import { Question } from './index';
+import { Topic } from './index';
 
 class User extends Model {
   declare id: number;
@@ -65,7 +65,7 @@ User.init(
       },
       afterCreate: async (userData) => {
         try {
-          const response = await Question.bulkCreate([
+          const response = await Topic.bulkCreate([
             {
               user_id: userData.id,
               topic: 'Javascript',

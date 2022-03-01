@@ -6,7 +6,7 @@ import { customErrorHandler } from '../utils/customErrorHandler';
 
 const questionHandler = async (
   user_id: number,
-  question_id: number,
+  topic_id: number,
   newQuestion: string
 ) => {
   newQuestion = `\nYou: "${newQuestion}"` + '\nTeachBot: "';
@@ -31,7 +31,7 @@ const questionHandler = async (
   const messageHistory = await Message.findAll({
     where: {
       user_id: user_id,
-      question_id: question_id,
+      topic_id: topic_id,
     },
     attributes: ['question_text', 'answer_text'],
     order: [['created_at', 'DESC']], //DESC Newest First
@@ -73,7 +73,7 @@ const a21Handler = async (
 
   const aiPrompt = await questionHandler(
     req.session.user_id,
-    parseInt(req.params.question_id),
+    parseInt(req.params.topic_id),
     question
   );
 
