@@ -1,8 +1,11 @@
-const router = require('express').Router();
-const { User } = require('../../models/index');
+import express from 'express';
+import { User } from '../../models';
+import { IReqSession } from '../../types';
+
+const router = express.Router();
 
 //LOGIN route
-router.post('/login', async (req, res) => {
+router.post('/login', async (req: IReqSession, res) => {
   try {
     const document = await User.findOne({
       where: {
@@ -35,7 +38,7 @@ router.post('/login', async (req, res) => {
 });
 
 //LOGOUT route
-router.post('/logout', (req, res) => {
+router.post('/logout', (req: IReqSession, res) => {
   if (req.session.isLoggedIn) {
     req.session.destroy(() => {
       return res.status(204).end();
@@ -47,7 +50,7 @@ router.post('/logout', (req, res) => {
 });
 
 //CREATE account route
-router.post('/', async (req, res) => {
+router.post('/', async (req: IReqSession, res) => {
   try {
     const document = await User.create({
       username: req.body.username,
@@ -71,4 +74,4 @@ router.post('/', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
