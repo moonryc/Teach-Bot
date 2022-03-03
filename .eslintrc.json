@@ -36,5 +36,9 @@
     "semi": ["error", "always"],
     "radix": "off"
   },
+<<<<<<< HEAD
+  "extends": ["prettier", "eslint:recommended", "plugin:jest/recommend"]
+=======
   "extends": ["prettier", "eslint:recommended", "plugin:jest/recommended"]
+>>>>>>> a37460709a7674fb63c860360aba1156f726965b
 }
