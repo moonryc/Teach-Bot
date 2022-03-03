@@ -15,8 +15,12 @@
         <a href="/">Teach Bot</a>
       </h1>
       <nav>
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">logout</button>
+      {{else}}
       <a href="/login">login</a>
-    </nav>
+      {{/if}}
+      </nav>
     </header>
     <main>
       {{{ body }}}
@@ -25,7 +29,9 @@
       Thank you for visiting uss!
     </footer>
   </div>
-
+{{#if}}
+ <script src="/javascript/logout.js"></script>
+ {{/if}}
 </body>
 
 </html>

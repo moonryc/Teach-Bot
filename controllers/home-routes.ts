@@ -27,12 +27,4 @@ homeRoutes.get('/signup', (req: IReqSession, res) => {
   res.render('signup');
 });
 
-// ABOUT PAGE
-homeRoutes.get('/about', (req:IReqSession, res) => {
-  res.render('about' ,{
-    title: 'About Us',
-    description: ''
-  });
-});
-
 export default homeRoutes;
