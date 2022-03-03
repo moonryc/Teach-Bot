@@ -27,6 +27,7 @@ homeRoutes.get('/signup', (req: IReqSession, res) => {
   res.render('signup');
 });
 
+
 // CHATBOT PAGE
 homeRoutes.get('/chatbot/:topicId', withAuth, (req: IReqSession, res) => {
   const topics = [
@@ -111,5 +112,4 @@ homeRoutes.get('/chatbot/:topicId', withAuth, (req: IReqSession, res) => {
     isLoggedIn: req.session.isLoggedIn,
   });
 });
-
 export default homeRoutes;
