@@ -25,4 +25,11 @@ homeRoutes.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+// About Page
+homeRoutes.get('/about', (req, res) => {
+  res.render('about', {
+    tittle: 'About Us',
+    description:'' });
+});
+
 export default homeRoutes;
