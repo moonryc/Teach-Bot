@@ -27,12 +27,9 @@ homeRoutes.get('/signup', (req: IReqSession, res) => {
   res.render('signup');
 });
 
-// ABOUT PAGE
-homeRoutes.get('/about', (req:IReqSession, res) => {
-  res.render('about' ,{
-    title: 'About Us',
-    description: ''
-  });
+// CHATBOUT PAGE
+homeRoutes.get('/chatbot/:topicid', (req: IReqSession, res) => {
+  res.render('chatbot', {});
 });
 
 export default homeRoutes;
