@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teach Bot</title>
-  <link rel="stylesheet" href="public/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <a href="/">Teach Bot</a>
       </h1>
       <nav>
-      {{#if loggedIn}}
+      {{#if isLoggedIn}}
       <button id="logout" class="btn-no-style">logout</button>
       {{else}}
       <a href="/login">login</a>
@@ -29,8 +29,8 @@
       Thank you for visiting uss!
     </footer>
   </div>
-{{#if}}
- <script src="../../public/javascript/logout.js"></script>
+{{#if isLoggedIn}}
+ <script src="/javascript/logout.js"></script>
  {{/if}}
 </body>
 

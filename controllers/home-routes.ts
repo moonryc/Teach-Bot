@@ -7,7 +7,7 @@ const homeRoutes = express.Router();
 //HOMEPAGE
 homeRoutes.get('/', async (req: IReqSession, res) => {
   if (req.session.isLoggedIn) {
-    res.redirect('/');
+    res.redirect('/chatbot/0');
     return;
   }
   res.render('homepage');
@@ -33,7 +33,7 @@ homeRoutes.get('/signup', (req: IReqSession, res) => {
 homeRoutes.get('/chatbot/:topicId', withAuth, async (req: IReqSession, res) => {
   const response = await Topic.findAll({
     where: {
-      id: req.params.topicId,
+      user_id: req.session.user_id,
     },
   });
 
