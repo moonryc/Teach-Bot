@@ -27,7 +27,7 @@ homeRoutes.get('/signup', (req: IReqSession, res) => {
   res.render('signup');
 });
 
-// CHATBOUT PAGE
+// CHATBOT PAGE
 homeRoutes.get('/chatbot/:topicid', (req: IReqSession, res) => {
   res.render('chatbot', {});
 });
