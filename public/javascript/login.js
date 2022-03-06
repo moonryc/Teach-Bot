@@ -8,14 +8,14 @@ async function loginFormHandler(event) {
     const response = await fetch('/api/users/login', {
       method: 'post',
       body: JSON.stringify({
-        email,
-        password
+        username: email,
+        password: password,
       }),
       headers: { 'Content-Type': 'application/json' }
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/chatbot/0');
     } else {
       alert(response.statusText);
     }
