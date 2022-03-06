@@ -12,17 +12,17 @@
   
   a {
     text-decoration: none;
-    color: #225ca3;
+    color: #28a567;
     font-weight: bold;
     transition: color .1s;
   }
   
   a:hover {
-    color: #3486eb;
+    color: #47d65a;
   }
   
   button {
-    background-color: #225ca3;
+    background-color: #158a42;
     border: 0;
     padding: 1%;
     color: white;
@@ -33,7 +33,7 @@
   }
   
   button:hover {
-    background-color: #3486eb;
+    background-color: #158a42;
   }
   
   .post-list {
@@ -49,7 +49,7 @@
   
   textarea:focus, input:focus {
     outline: none;
-    border: 1px solid #3486eb;
+    border: 1px solid #0b571b;
   }
   
   textarea {
@@ -97,7 +97,7 @@
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
+    color: #47d65a;
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -106,7 +106,7 @@
   
   .btn-no-style:hover {
     background: none;
-    color: #3486eb;
+    color: #0c9f2c;
   }
   
   .delete-post-btn {
@@ -133,39 +133,30 @@
     margin: -1.5% 0 2% 0;
   }
   
-  .upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
-  }
-  
-  .upvote-btn:hover {
-    background-color: #1f9c13;
-  }
-  
-  .comment-form {
+  .question-form {
     margin-bottom: 5%;
   }
   
-  .comment {
+  .question {
     padding: 1%;
     margin-bottom: 1%;
   }
   
-  .comment:nth-child(odd) {
+  .question:nth-child(odd) {
     background-color: #fff5eb;
   }
   
-  .comment .meta {
+  .question .meta {
     font-size: 90%;
     margin-bottom: .5%;
     opacity: .6;
   }
   
-  .new-post-form input {
+  .new-question-form input {
     width: 300px;
   }
   
-  .edit-post-form {
+  .edit-question-form {
     margin-bottom: 5%;
   }
   

@@ -10,7 +10,7 @@ homeRoutes.get('/', async (req: IReqSession, res) => {
     res.redirect('/chatbot/0');
     return;
   }
-  res.render('homepage');
+  res.render('homepage', { title: 'Teach Bot!', condition: false});
 });
 
 //LOGIN PAGE
