@@ -1,25 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
-    <title>Chat Bot</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-  </head>
-  <body>
+
       <div class="container">
           <img src="" alt="Avatar">
           <p>Welcome! Chat Bot is here to help!</p>
           <span class="time-right"></span>
       </div>
       <div>
+        {{logger topics}}
+        {{logger questions}}
           <ul id="messages"></ul>
           <input id="chatbox" type="text">
           <img src="" alt="Avatar">
           <p>{{message}}</p>
       </div>
       <button id="button">Send</button>
-    <script src="/javascript/message.js"></script>
-  </body>
-</html>
+    <script src="../public/javascript/message.js"></script>

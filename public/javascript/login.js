@@ -11,7 +11,7 @@ async function loginFormHandler(event) {
         username: email,
         password: password,
       }),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
@@ -22,4 +22,6 @@ async function loginFormHandler(event) {
   }
 }
 
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+document
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
