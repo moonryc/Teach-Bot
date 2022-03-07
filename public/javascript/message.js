@@ -5,22 +5,15 @@ const scrollToBottom = () => {
   messageContatiner.scrollTop = messageContatiner.scrollHeight;
 };
 
-const topic =
+const topic = parseInt(
   window.location.pathname.split('/')[
     window.location.pathname.split('/').length - 1
-  ];
-
-if (topic) {
-  scrollToBottom();
-}
+  ]
+);
 
 const submitQuestion = async (e) => {
   e.preventDefault();
   const question = document.querySelector('.message-input').value;
-
-  if (!question) {
-    return alert('Please submit a non-empty message');
-  }
 
   const response = await fetch(`/api/question/${topic}`, {
     method: 'POST',
@@ -38,13 +31,20 @@ const submitQuestion = async (e) => {
 
   const divEl = document.createElement('div');
 
-  divEl.innerHTML = `<div>
+  if (question) {
+    divEl.innerHTML = `<div>
   
 <!--  human-->
   <div class="human-message">${question}</div>
 <!--  ai-->
   <div class="ai-message">${body.message}</div>
 </div>`;
+  } else {
+    divEl.innerHTML = `<div>
+<!--  ai-->
+  <div class="ai-message">${body.message}</div>
+</div>`;
+  }
 
   messagesEl.append(divEl);
 
@@ -53,8 +53,6 @@ const submitQuestion = async (e) => {
 };
 
 const deleteTopicHandler = async () => {
-  console.log(topic);
-
   const response = await fetch(`/api/question/${topic}`, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
@@ -68,10 +66,42 @@ const deleteTopicHandler = async () => {
   document.location.replace('/chatbot/0');
 };
 
-document
-  .querySelector('.clear-history')
-  .addEventListener('click', deleteTopicHandler);
+const createTopicHandler = async (e) => {
+  e.preventDefault();
+
+  const topic = document.querySelector('#new-topic-field').value;
+
+  const response = await fetch('/api/question/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ topic }),
+  });
+
+  const body = await response.json();
+  if (!response.ok) {
+    return alert(body);
+  }
+
+  const topicsEl = document.getElementById('topics-scroll');
+
+  const divEl = document.createElement('div');
+
+  divEl.innerHTML = `<a href="/chatbot/${body.id}">${topic}</a>`;
+  topicsEl.append(divEl);
+};
 
 document
-  .querySelector('#questionForm')
-  .addEventListener('submit', (e) => submitQuestion(e));
+  .querySelector('#new-topic')
+  .addEventListener('submit', (e) => createTopicHandler(e));
+
+if (topic !== 0) {
+  document
+    .querySelector('.clear-history')
+    .addEventListener('click', deleteTopicHandler);
+
+  document
+    .querySelector('#questionForm')
+    .addEventListener('submit', (e) => submitQuestion(e));
+
+  scrollToBottom();
+}

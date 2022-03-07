@@ -48,7 +48,7 @@ questionRoutes.post('/', withAuth, async (req: IReqSession, res) => {
       return res.status(500).json({ message: 'error creating question' });
     }
 
-    return res.json({ message: req.body.topic });
+    return res.json({ message: req.body.topic, id: document.id });
   } catch (e) {
     console.log('Error');
     console.log(e);
