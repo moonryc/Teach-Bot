@@ -78,7 +78,7 @@ const a21Handler = async (
   );
 
   customErrorHandler('aiPrompt Submission', aiPrompt);
-  req.body.answer = await aiQuestionFetcher(aiPrompt);
+  req.body.answer = (await aiQuestionFetcher(aiPrompt)).replace('You: ','').replace('You:','');
   customErrorHandler('AI Response', req.body.answer);
   customErrorHandler('Resulting Conversation flow', aiPrompt + req.body.answer);
   next();
