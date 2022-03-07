@@ -1,11 +1,12 @@
-<div class="question">
-  {{#each this}}
-  <section class="questions">
-    <div class="meta">
-      {{user.username}} on {{format_date created_at}}
-    </div>
-    <div class="text">
-      {{question_text}}
-    </div>
-  </section>
-  {{/each}
+<div>
+<!--  human-->
+
+  <div class="human-message">{{this.question_text}}</div>
+
+<!--  ai-->
+
+  <div class="ai-message">{{this.answer_text}}</div>
+
+</div>
+
+
