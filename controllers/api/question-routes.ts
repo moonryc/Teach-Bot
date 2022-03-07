@@ -14,6 +14,9 @@ questionRoutes.post(
   asyncMiddleWare(a21Handler),
   async (req: IReqSession, res) => {
     try {
+
+      console.log(req.body.answer_text);
+
       const document = await Message.create({
         user_id: req.session.user_id,
         topic_id: parseInt(req.params.topic_id),
