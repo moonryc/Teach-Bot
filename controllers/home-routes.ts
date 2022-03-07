@@ -10,7 +10,7 @@ homeRoutes.get('/', async (req: IReqSession, res) => {
     res.redirect('/chatbot/0');
     return;
   }
-  res.render('homepage');
+  res.render('homepage', { title: 'Teach Bot!', condition: false });
 });
 
 //LOGIN PAGE
@@ -64,6 +64,7 @@ homeRoutes.get('/chatbot/:topicId', withAuth, async (req: IReqSession, res) => {
   res.render('chatbot', {
     topics,
     questions,
+    topic_id: req.params.topicId,
     isLoggedIn: req.session.isLoggedIn,
   });
 });
