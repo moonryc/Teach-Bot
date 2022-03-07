@@ -1,16 +1,31 @@
+<div class="chatbot-wrapper">
 
-      <div class="container">
-          <img src="" alt="Avatar">
-          <p>Welcome! Chat Bot is here to help!</p>
-          <span class="time-right"></span>
-      </div>
-      <div>
-        {{logger topics}}
-        {{logger questions}}
-          <ul id="messages"></ul>
-          <input id="chatbox" type="text">
-          <img src="../public/stylesheets/images/robot.png" alt="Avatar">
-          <p>{{message}}</p>
-      </div>
-      <button id="button">Send</button>
-    <script src="../public/javascript/message.js"></script>
+  <!--Topics-->
+  <div id="topics">
+    <h3>Topics</h3>
+    {{#each topics as |topic|}}
+      {{> topic topic}}
+    {{/each}}
+  </div>
+
+  {{#if topic_id}}
+  <!--        Messages-->
+  <div class="chat-wrapper">
+    <div id="messages">
+      {{#each questions as |question|}}
+        {{> question question}}
+      {{/each}}
+    </div>
+    <div class="input-container">
+    <button class="clear-history">Clear History</button>
+      <form id="questionForm" style="display:flex; width: 100%">
+          <input id="inputMessages" class="message-input" />
+
+        <button class="submit-question">Submit</button>
+      </form>
+    </div>
+  </div>
+  {{/if}}
+</div>
+<!--      <button id="button">Send</button>-->
+<script src="/javascript/message.js"></script>

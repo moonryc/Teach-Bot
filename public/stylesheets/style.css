@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
   }
-  
+
   body, html {
     height: 100%;
     padding: 0;
@@ -9,18 +9,18 @@
     font-family: sans-serif;
     color: #333;
   }
-  
+
   a {
     text-decoration: none;
     color: #28a567;
     font-weight: bold;
     transition: color .1s;
   }
-  
+
   a:hover {
     color: #47d65a;
   }
-  
+
   button {
     background-color: #158a42;
     border: 0;
@@ -31,40 +31,40 @@
     cursor: pointer;
     border-radius: 5px;
   }
-  
+
   button:hover {
     background-color: #158a42;
   }
-  
+
   .post-list {
     margin: 0;
     padding: 0;
   }
-  
+
   textarea, input {
     padding: .5%;
     border-radius: 5px;
     border: 1px solid #ccc;
   }
-  
+
   textarea:focus, input:focus {
     outline: none;
     border: 1px solid #0b571b;
   }
-  
+
   textarea {
     min-width: 40%;
     min-height: 100px;
   }
-  
+
   form > div {
     margin-bottom: 2%;
   }
-  
+
   form label {
     display: block;
   }
-  
+
   .wrapper {
     width: 100%;
     min-height: 100%;
@@ -73,7 +73,7 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   header {
     border-bottom: 1px solid #ccc;
     display: flex;
@@ -81,16 +81,16 @@
     align-items: center;
     padding: 0 1%;
   }
-  
+
   header h1 {
     font-size: 1em;
   }
-  
+
   main {
     flex: 1;
     padding: 2% 4%;
   }
-  
+
   .btn-no-style {
     background: none;
     border: none;
@@ -103,63 +103,63 @@
     transition: color .1s;
     margin-left: 16px;
   }
-  
+
   .btn-no-style:hover {
     background: none;
     color: #0c9f2c;
   }
-  
+
   .delete-post-btn {
     background-color: #d41414;
   }
-  
+
   .delete-post-btn:hover {
     background-color: #ff643d;
   }
-  
+
   .post {
     margin-bottom: 2%;
     line-height: 150%;
   }
-  
+
   .post .title span {
     font-style: italic;
     font-size: 90%;
     color: #7d7d7d;
   }
-  
+
   .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
   }
-  
+
   .question-form {
     margin-bottom: 5%;
   }
-  
+
   .question {
     padding: 1%;
     margin-bottom: 1%;
   }
-  
+
   .question:nth-child(odd) {
     background-color: #fff5eb;
   }
-  
+
   .question .meta {
     font-size: 90%;
     margin-bottom: .5%;
     opacity: .6;
   }
-  
+
   .new-question-form input {
     width: 300px;
   }
-  
+
   .edit-question-form {
     margin-bottom: 5%;
   }
-  
+
   footer {
     border-top: 1px solid #ccc;
     display: flex;
@@ -167,3 +167,60 @@
     padding: 1%;
     font-size: 110%;
   }
+
+
+  .chatbot-wrapper{
+    display:flex;
+    height:80vh;
+  }
+
+  #topics{
+
+  }
+
+.chat-wrapper{
+  padding-left: 5px;
+}
+
+#messages{
+  overflow-y: scroll;
+  height:100%;
+}
+
+  .message-input{
+    width:100%;
+    border-radius: 0;
+  }
+
+  .human-message{
+    width:auto;
+    max-width:70%;
+    float:right;
+    text-align: right;
+    background-color: #1a72e7;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px 10px 0px 10px;
+  }
+
+.ai-message{
+  width:auto;
+  max-width:70%;
+  float:left;
+  background-color: #f06f0a;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px 10px 10px 0px;
+}
+
+.input-container{
+  display:flex;
+  flex-direction: row;
+}
+.submit-question{
+  border-radius: 0 10px 10px 0;
+
+}
+.clear-history{
+  border-radius: 10px 0 0 10px;
+}
