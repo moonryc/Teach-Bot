@@ -18,7 +18,10 @@
       {{#if isLoggedIn}}
       <button id="logout" class="btn-no-style">logout</button>
       {{else}}
-      <a href="/login">login</a>
+      <a href="/signup">Sign Up</a>
+      <a href="/">Home</a>
+      <a href="/login">Login</a>
+      <a href="/chatbot/:topicId">chatbot</a>
       {{/if}}
       </nav>
     </header>
@@ -26,7 +29,7 @@
       {{{ body }}}
     </main>
     <footer>
-      Thank you for visiting uss!
+      Thank you for visiting us!
     </footer>
   </div>
 {{#if isLoggedIn}}
