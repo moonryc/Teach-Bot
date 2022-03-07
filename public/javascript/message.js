@@ -1,10 +1,21 @@
+let messageContatiner;
+
+const scrollToBottom = () => {
+  messageContatiner = document.getElementById('messages');
+  messageContatiner.scrollTop = messageContatiner.scrollHeight;
+};
+
+const topic =
+  window.location.pathname.split('/')[
+    window.location.pathname.split('/').length - 1
+  ];
+
+if (topic) {
+  scrollToBottom();
+}
+
 const submitQuestion = async (e) => {
   e.preventDefault();
-
-  const topic =
-    window.location.pathname.split('/')[
-      window.location.pathname.split('/').length - 1
-    ];
   const question = document.querySelector('.message-input').value;
 
   if (!question) {
@@ -20,19 +31,46 @@ const submitQuestion = async (e) => {
   const body = await response.json();
 
   if (!response.ok) {
-    alert('response is not okay');
+    return alert('response is not okay');
   }
 
   const messagesEl = document.getElementById('messages');
 
-  messagesEl.append(`<div>
+  const divEl = document.createElement('div');
+
+  divEl.innerHTML = `<div>
   
 <!--  human-->
   <div class="human-message">${question}</div>
 <!--  ai-->
   <div class="ai-message">${body.message}</div>
-</div>`);
+</div>`;
+
+  messagesEl.append(divEl);
+
+  document.querySelector('.message-input').value = '';
+  scrollToBottom();
 };
+
+const deleteTopicHandler = async () => {
+  console.log(topic);
+
+  const response = await fetch(`/api/question/${topic}`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (!response.ok) {
+    const body = await response.json();
+    return alert(body.message);
+  }
+
+  document.location.replace('/chatbot/0');
+};
+
+document
+  .querySelector('.clear-history')
+  .addEventListener('click', deleteTopicHandler);
 
 document
   .querySelector('#questionForm')

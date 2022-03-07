@@ -55,9 +55,7 @@ const questionHandler = async (
         oldMessages = ' ' + answer_text + oldMessages;
       } else {
         oldMessages =
-          `\nYou: "${question_text}"` +
-          `\nTeachBot: "${answer_text}"` +
-          oldMessages;
+          `\n"${question_text}"` + `\n"${answer_text}"` + oldMessages;
       }
     }
   }

@@ -3,9 +3,15 @@
   <!--Topics-->
   <div id="topics">
     <h3>Topics</h3>
+    <form>
+      <input id="new-topic">
+      <button>Create Topic</button>
+    </form>
+    <div id="topics-scroll">
     {{#each topics as |topic|}}
       {{> topic topic}}
     {{/each}}
+    </div>
   </div>
 
   {{#if topic_id}}
@@ -17,7 +23,7 @@
       {{/each}}
     </div>
     <div class="input-container">
-    <button class="clear-history">Clear History</button>
+    <button class="clear-history">Delete Topic</button>
       <form id="questionForm" style="display:flex; width: 100%">
           <input id="inputMessages" class="message-input" />
 

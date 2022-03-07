@@ -60,7 +60,7 @@ questionRoutes.delete('/:topic_id', withAuth, async (req: IReqSession, res) => {
   try {
     const document = await Topic.destroy({
       where: {
-        id: req.params.question_id,
+        id: req.params.topic_id,
         user_id: req.session.user_id,
       },
     });
