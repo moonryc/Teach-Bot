@@ -1,0 +1,37 @@
+<div class="chatbot-wrapper">
+
+  <!--Topics-->
+  <div id="topics">
+    <h3>Topics</h3>
+    <form id="new-topic">
+      <input id="new-topic-field">
+      <button>Create Topic</button>
+    </form>
+    <div id="topics-scroll">
+    {{#each topics as |topic|}}
+      {{> topic topic}}
+    {{/each}}
+    </div>
+  </div>
+
+  {{#if topic_id}}
+  <!--        Messages-->
+  <div class="chat-wrapper">
+    <div id="messages">
+      {{#each questions as |question|}}
+        {{> question question}}
+      {{/each}}
+    </div>
+    <div class="input-container">
+    <button class="clear-history">Delete Topic</button>
+      <form id="questionForm" style="display:flex; width: 100%">
+          <input id="inputMessages" class="message-input" />
+
+        <button class="submit-question">Submit</button>
+      </form>
+    </div>
+  </div>
+  {{/if}}
+</div>
+<!--      <button id="button">Send</button>-->
+<script src="/javascript/message.js"></script>

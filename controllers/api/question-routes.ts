@@ -48,7 +48,7 @@ questionRoutes.post('/', withAuth, async (req: IReqSession, res) => {
       return res.status(500).json({ message: 'error creating question' });
     }
 
-    return res.json({ message: req.body.topic });
+    return res.json({ message: req.body.topic, id: document.id });
   } catch (e) {
     console.log('Error');
     console.log(e);
@@ -60,7 +60,7 @@ questionRoutes.delete('/:topic_id', withAuth, async (req: IReqSession, res) => {
   try {
     const document = await Topic.destroy({
       where: {
-        id: req.params.question_id,
+        id: req.params.topic_id,
         user_id: req.session.user_id,
       },
     });
