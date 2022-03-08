@@ -179,7 +179,16 @@
     border-style: solid;
     border-color: #052d13;
   }
-  
+  .column img {
+    width: 100%;
+  height: auto;
+  }
+  .desc {
+    padding: 15px;
+    text-align:center;
+    text-emphasis-position:inherit;
+
+  }
   /* Clear floats after the columns */
   .row:after {
     content: "";
