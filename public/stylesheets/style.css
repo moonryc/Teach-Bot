@@ -159,7 +159,33 @@
   .edit-question-form {
     margin-bottom: 5%;
   }
+  .homepage-section h1 {
+    display: flex;
+    justify-content: center;
+  }
+  .homepage-section p {
+    text-align:justify;
+    border:3px; 
+    border-style:solid; 
+    border-color:#052d13;
+    padding: 1em;
+  }
 
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px; 
+    border-style: solid;
+    border-color: #052d13;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   footer {
     border-top: 1px solid #ccc;
     display: flex;
@@ -240,3 +266,4 @@
     height:50px
   }
 }
+
