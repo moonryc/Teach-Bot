@@ -170,7 +170,20 @@
     border-color:#052d13;
     padding: 1em;
   }
-
+  .sub p {
+    text-align:justify;
+    border:3px; 
+    border-style:solid; 
+    border-color:#052d13;
+    padding: 1em;
+  }
+  .sub-end p {
+    text-align:justify;
+    border:3px; 
+    border-style:solid; 
+    border-color:#052d13;
+    padding: 1em;
+  }
   .column {
     float: left;
     width: 33.33%;
