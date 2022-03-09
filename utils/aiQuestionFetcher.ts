@@ -4,7 +4,7 @@ const aiQuestionFetcher = async (question: string) => {
   try {
     const response = await axios({
       method: 'post',
-      url: 'https://api.ai21.com/studio/v1/j1-large/complete',
+      url: 'https://api.ai21.com/studio/v1/j1-jumbo/complete',
       data: JSON.stringify({
         prompt: question,
         numResults: 1,
