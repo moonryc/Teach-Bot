@@ -72,6 +72,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    background-color:#f3fbf5;
   }
 
   header {
@@ -80,12 +81,24 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 1%;
+    background-color: #ddefdf;
+    overflow: hidden;
   }
 
   header h1 {
     font-size: 1em;
   }
-
+  header nav {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  }
+  
   main {
     flex: 1;
     padding: 2% 4%;
@@ -106,59 +119,9 @@
 
   .btn-no-style:hover {
     background: none;
-    color: #0c9f2c;
+    color: #10c837;
   }
-
-  .delete-post-btn {
-    background-color: #d41414;
-  }
-
-  .delete-post-btn:hover {
-    background-color: #ff643d;
-  }
-
-  .post {
-    margin-bottom: 2%;
-    line-height: 150%;
-  }
-
-  .post .title span {
-    font-style: italic;
-    font-size: 90%;
-    color: #7d7d7d;
-  }
-
-  .edit-link {
-    display: block;
-    margin: -1.5% 0 2% 0;
-  }
-
-  .question-form {
-    margin-bottom: 5%;
-  }
-
-  .question {
-    padding: 1%;
-    margin-bottom: 1%;
-  }
-
-  .question:nth-child(odd) {
-    background-color: #fff5eb;
-  }
-
-  .question .meta {
-    font-size: 90%;
-    margin-bottom: .5%;
-    opacity: .6;
-  }
-
-  .new-question-form input {
-    width: 300px;
-  }
-
-  .edit-question-form {
-    margin-bottom: 5%;
-  }
+  /* homepage design*/
   .homepage-section h1 {
     display: flex;
     justify-content: center;
@@ -216,6 +179,24 @@
     font-size: 110%;
   }
 
+/* login and signup */
+.login-form {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.signup-form {
+width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+/* Chatbot */
 
   .chatbot-wrapper{
     display:flex;
