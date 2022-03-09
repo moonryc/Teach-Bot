@@ -72,6 +72,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    background-color:#f3fbf5;
   }
 
   header {
@@ -80,12 +81,24 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 1%;
+    background-color: #ddefdf;
+    overflow: hidden;
   }
 
   header h1 {
     font-size: 1em;
   }
-
+  header nav {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  }
+  
   main {
     flex: 1;
     padding: 2% 4%;
@@ -106,60 +119,58 @@
 
   .btn-no-style:hover {
     background: none;
-    color: #0c9f2c;
+    color: #10c837;
   }
-
-  .delete-post-btn {
-    background-color: #d41414;
+  /* homepage design*/
+  .homepage-section h1 {
+    display: flex;
+    justify-content: center;
   }
-
-  .delete-post-btn:hover {
-    background-color: #ff643d;
+  .homepage-section p {
+    text-align:justify;
+    border:3px; 
+    border-style:solid; 
+    border-color:#052d13;
+    padding: 1em;
   }
-
-  .post {
-    margin-bottom: 2%;
-    line-height: 150%;
+  .sub p {
+    text-align:justify;
+    border:3px; 
+    border-style:solid; 
+    border-color:#052d13;
+    padding: 1em;
   }
-
-  .post .title span {
-    font-style: italic;
-    font-size: 90%;
-    color: #7d7d7d;
+  .sub-end p {
+    text-align:justify;
+    border:3px; 
+    border-style:solid; 
+    border-color:#052d13;
+    padding: 1em;
   }
-
-  .edit-link {
-    display: block;
-    margin: -1.5% 0 2% 0;
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px; 
+    border-style: solid;
+    border-color: #052d13;
   }
-
-  .question-form {
-    margin-bottom: 5%;
+  .column img {
+    width: 100%;
+  height: auto;
   }
+  .desc {
+    padding: 15px;
+    text-align:center;
+    text-emphasis-position:inherit;
 
-  .question {
-    padding: 1%;
-    margin-bottom: 1%;
   }
-
-  .question:nth-child(odd) {
-    background-color: #fff5eb;
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
-
-  .question .meta {
-    font-size: 90%;
-    margin-bottom: .5%;
-    opacity: .6;
-  }
-
-  .new-question-form input {
-    width: 300px;
-  }
-
-  .edit-question-form {
-    margin-bottom: 5%;
-  }
-
   footer {
     border-top: 1px solid #ccc;
     display: flex;
@@ -168,6 +179,24 @@
     font-size: 110%;
   }
 
+/* login and signup */
+.login-form {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.signup-form {
+width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+/* Chatbot */
 
   .chatbot-wrapper{
     display:flex;
@@ -199,7 +228,6 @@
     width: fit-content;
     /*max-width:70%;*/
     text-align: right;
-
     background-color: #1a72e7;
     margin: 5px;
     padding: 5px;
@@ -213,7 +241,6 @@
   width:fit-content;
   max-width:70%;
   background-color: #f06f0a;
-
   margin: 5px;
   padding: 5px;
   border-radius: 10px 10px 10px 0px;
@@ -242,3 +269,4 @@
     height:50px
   }
 }
+
